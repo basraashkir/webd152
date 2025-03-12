@@ -10,22 +10,16 @@ body {
 #wrapper {
   background-color: #90c7e3; /* bgc#90c7e3*/
   background-image: linear-gradient(to bottom, #fff, #b18bc1);
-  border: 1px solid #003;
-  box-shadow: 3px 3px 3px #333; /* bxsd */
-  margin: auto; /* m:a 8 */
-  min-width: 960px; /* mw960 */
-  max-width: 2048px; /* maw 2048 */
-  width: 80%; /* w80% */
 }
 header {
-  background-color: #010132; /* #C2A0E8*/
+  background-color: #000032; /* #C2A0E8*/
   background-image: url(images/sunset.jpg); /* bgi */
   background-position: right; /* bgdp */
   background-repeat: no-repeat; /* bgr */
   background-size: contain;
   color: #fff; /* c#fff */
-  height: 120px; /* h60 */
-  padding-top: 30px; /* pt15 */
+  /* height: 120px;  h60 */
+  /* padding-top: 30px;  pt15 */
   text-align: center; /* tac */
 }
 header a {
@@ -39,11 +33,10 @@ header a:hover {
   color: #90c7e3; /* c#90c7e3 */
 }
 nav {
-  float: left;
   /* font-size: 120%; */
   font-weight: bold;
-  padding: 1.5em 0.5em;
-  width: 160px;
+  padding: 0;
+  text-align: center; /* tac */
 }
 
 nav ul {
@@ -51,6 +44,9 @@ nav ul {
   list-style-type: none; /* listn */
   margin: 0; /* m0 */
   padding-left: 0; /* pl0 */
+}
+nav li {
+  border-bottom: 1px solid #002171; /* bdb-002171 */
 }
 nav a {
   text-decoration: none; /* txd */
@@ -66,22 +62,16 @@ nav a:hover {
 }
 main {
   background-color: #c8aed1; /* bgc#c8aed1 */
-  margin-left: 190px; /* ml190 */
   padding: 1px 20px 20px 30px;
   display: block;
   overflow: auto; /* ova */
 }
-section {
-  float: left; /* fl */
-  padding-left: 2em; /* pl2em */
-  padding-right: 2em; /* pr2em */
-  width: 33%;
-}
+
 h1 {
-  font-size: 3em; /* fz3em */
+  /* font-size: 3em;  fz3em */
   letter-spacing: 0.25em; /* lts.25em */
-  margin-bottom: 0; /* mb0 */
-  margin-top: 0; /* mt0 */
+  margin-bottom: 0.5em; /* mb0 */
+  margin-top: 0.5em; /* mt0 */
 }
 h1,
 h2,
@@ -100,10 +90,9 @@ dt {
   color: #016927; /* #DED7FA */
 }
 footer {
-  background-color: #481d65; /* bgc#481d65 */
+  background-color: #fff; /* bgc#fff */
   font-size: 75%; /* fz75% */
   font-style: italic; /* fsi */
-  margin-left: 190px; /* ml190 */
   padding: 2em; /* p2em */
   text-align: center; /* txa */
 }
@@ -118,20 +107,83 @@ footer {
   background-image: url(images/coast2.jpg); /* bgi */
   background-repeat: no-repeat; /* bgr */
   background-size: 100% 100%; /* bgz100%100% */
-  height: 300px; /* h300 */
-  margin-left: 190px; /* ml190 */
+  height: 300px;
 }
 #yurthero {
   background-image: url(images/yurt.jpg); /* bgi */
   background-repeat: no-repeat; /* bgr */
   background-size: 100% 100%; /* bgz100%100% */
   height: 300px; /* h300 */
-  margin-left: 190px; /* ml190 */
 }
 #trailhero {
   background-image: url(images/trail.jpg); /* bgi */
   background-repeat: no-repeat; /* bgr */
   background-size: 100% 100%; /* bgz100%100% */
   height: 300px; /* h300 */
-  margin-left: 190px; /* ml190 */
+}
+@media (max-width: 420px) {
+  header {
+    background-image: none;
+  }
+}
+@media (min-width: 600px) {
+  nav ul {
+    display: flex; /* df */
+    flex-direction: row; /* fdr */
+    flex-wrap: nowrap; /* flw */
+    justify-content: space-around; /* jc */
+  }
+  nav li {
+    border-bottom: none; /* bbd:n */
+  }
+  .flow {
+    display: flex; /* df */
+    flex-direction: row; /* fdr */
+  }
+  section {
+    flex: 1; /* flex1 */
+    margin-right: 1em;
+  }
+}
+@media (min-width: 1024px) {
+  #wrapper {
+    margin: auto; /* ma:a */
+    width: 80%;
+    border: 1px solid #002171; /* bd1-solid-#002171 */
+    box-shadow: 3px 3px 3px #002171;
+  }
+  nav {
+    text-align: left; /* ta:l */
+    padding-left: 1em; /* pl1em */
+  }
+  @supports (display: grid) {
+    nav ul {
+      flex-direction: column;
+      padding-top: 1em;
+    }
+    .hero {
+      grid-area: hero;
+    }
+    .header {
+      grid-area: header;
+    }
+    nav {
+      grid-area: nav;
+    }
+    main {
+      grid-area: main;
+    }
+    footer {
+      grid-area: footer;
+    }
+    #wrapper {
+      display: grid;
+      grid-template:
+        "header header"
+        "nav hero"
+        "nav main"
+        "nav footer"
+        / 180px 1fr;
+    }
+  }
 }
