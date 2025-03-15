@@ -164,7 +164,7 @@ footer {
     .hero {
       grid-area: hero;
     }
-    .header {
+    header {
       grid-area: header;
     }
     nav {
