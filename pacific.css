@@ -144,6 +144,15 @@ td {
 tr:nth-last-of-type(odd) {
   background-color: #ffcd6f;
 }
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+input,
+textarea {
+  margin-bottom: 0.5em;
+}
 @media (max-width: 600px) {
   header {
     background-image: none;
@@ -205,6 +214,7 @@ window size. If the viewport is 50cm wide, 1vw = 0.5cm. */
     border-bottom: 2px solid #1b69b2; /*bb2-solid#1b69b2 */
   }
 }
+
 @media (min-width: 600px) {
   nav ul {
     display: flex; /* df */
@@ -222,6 +232,17 @@ window size. If the viewport is 50cm wide, 1vw = 0.5cm. */
   section {
     flex: 1; /* flex1 */
     margin-right: 1em;
+  }
+  form {
+    display: grid;
+    grid-template-columns: 6em 1fr;
+    gap: 1em;
+    max-width: 30em;
+    width: 60%;
+  }
+  input[type="submit"] {
+    grid-column: 2 / 3;
+    width: 9em;
   }
 }
 @media (min-width: 1024px) {
