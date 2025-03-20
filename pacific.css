@@ -49,6 +49,7 @@ nav li {
 }
 nav a {
   text-decoration: none; /* txd */
+  transition: color 3s ease-out;
 }
 nav a:link {
   color: #5c7fa3;
@@ -153,6 +154,19 @@ input,
 textarea {
   margin-bottom: 0.5em;
 }
+video {
+  float: right;
+  margin: 1em;
+}
+#gallery {
+  display: grid;
+  gap: 2em;
+}
+#gallery img {
+  box-shadow: 10px 10px 10px #777;
+  text-align: center;
+  width: 100%;
+}
 @media (max-width: 600px) {
   header {
     background-image: none;
@@ -244,6 +258,18 @@ window size. If the viewport is 50cm wide, 1vw = 0.5cm. */
     grid-column: 2 / 3;
     width: 9em;
   }
+  #gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 730px) {
+  video {
+    display: block;
+    float: none;
+    clear: both;
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
 @media (min-width: 1024px) {
   #wrapper {
@@ -273,6 +299,9 @@ window size. If the viewport is 50cm wide, 1vw = 0.5cm. */
     main {
       grid-area: main;
     }
+    #gallery {
+      grid-area: gallery;
+    }
     footer {
       grid-area: footer;
     }
@@ -284,6 +313,9 @@ window size. If the viewport is 50cm wide, 1vw = 0.5cm. */
         "nav main"
         "nav footer"
         / 180px 1fr;
+    }
+    #gallery {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }
