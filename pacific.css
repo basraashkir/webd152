@@ -9,7 +9,7 @@ body {
 }
 #wrapper {
   background-color: #90c7e3; /* bgc#90c7e3*/
-  background-image: linear-gradient(to bottom, #fff, #b18bc1);
+  background-image: linear-gradient(to bottom, #f0f0f0, #b18bc1);
 }
 header {
   background-color: #000032; /* #C2A0E8*/
@@ -61,10 +61,9 @@ nav a:hover {
   color: #512964; /* c#512964 */
 }
 main {
-  background-color: #c8aed1; /* bgc#c8aed1 */
-  padding: 1px 20px 20px 30px;
-  display: block;
-  overflow: auto; /* ova */
+  background-color: #c8aed1;
+  padding: 20px;
+  overflow: auto;
 }
 
 h1 {
@@ -121,6 +120,22 @@ footer {
   background-size: 100% 100%; /* bgz100%100% */
   height: 300px; /* h300 */
 }
+/* #reservationhero {
+  height: 300px;
+  background-image: url(images/sunset.jpg);
+  background-size: cover;
+  background-position: center;
+} */
+
+#abouthero {
+  background-image: url(finalimages/beach\ view.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  width: 100%;
+}
+
 table {
   border-bottom: 2px solid #1976d2;
   border-collapse: separate; /* Changed this style to separate because I liked the
@@ -273,38 +288,18 @@ window size. If the viewport is 50cm wide, 1vw = 0.5cm. */
 }
 @media (min-width: 1024px) {
   #wrapper {
-    margin: auto; /* m:a */
+    margin: auto;
     width: 80%;
-    border: 1px solid #002171; /* bd1-solid-#002171 */
+    border: 1px solid #002171;
     box-shadow: 3px 3px 3px #002171;
   }
+
   nav {
-    text-align: left; /* ta:l */
-    padding-left: 1em; /* pl1em */
+    text-align: left; /* Align nav text left */
+    padding-left: 1em;
   }
+
   @supports (display: grid) {
-    nav ul {
-      flex-direction: column;
-      padding-top: 1em;
-    }
-    .hero {
-      grid-area: hero;
-    }
-    header {
-      grid-area: header;
-    }
-    nav {
-      grid-area: nav;
-    }
-    main {
-      grid-area: main;
-    }
-    #gallery {
-      grid-area: gallery;
-    }
-    footer {
-      grid-area: footer;
-    }
     #wrapper {
       display: grid;
       grid-template:
@@ -314,8 +309,329 @@ window size. If the viewport is 50cm wide, 1vw = 0.5cm. */
         "nav footer"
         / 180px 1fr;
     }
+
+    header {
+      grid-area: header;
+    }
+
+    nav {
+      grid-area: nav;
+    }
+
+    main {
+      grid-area: main;
+    }
+
+    footer {
+      grid-area: footer;
+    }
+
+    .hero {
+      grid-area: hero;
+    }
+
+    #abouthero {
+      grid-area: hero;
+    }
+
     #gallery {
+      grid-area: gallery;
       grid-template-columns: repeat(3, 1fr);
     }
+
+    nav ul {
+      flex-direction: column;
+      padding-top: 1em;
+    }
   }
+}
+
+#our-heritage h2,
+#adventure-awaits h2,
+#cta h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+#our-heritage p,
+#adventure-awaits p,
+#cta p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+#our-heritage {
+  margin-top: 0;
+}
+.image-gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.image-gallery img {
+  width: 30%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#interactive-map iframe {
+  border: none;
+  width: 80%;
+  margin-top: 20px;
+}
+
+/* CTA Button */
+.cta-button {
+  background-color: #2c3e50;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  background-color: #34495e;
+  transform: scale(1.1);
+}
+
+/* Video Styling */
+video {
+  display: block;
+  margin: 1em auto;
+  max-width: 70%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 800px) {
+  video {
+    max-width: 95%;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1024px) {
+  video {
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 1025px) {
+  video {
+    max-width: 50%;
+  }
+}
+
+#aboutmain {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#aboutmain section {
+  padding: 40px 0 0 0;
+  margin-bottom: 60px;
+  background-color: transparent !important;
+  width: 100%;
+  text-align: center;
+}
+
+/* Heading */
+#aboutmain h2 {
+  font-size: 2.4em;
+  margin: 5px 0 10px 0;
+  color: #04613f;
+  text-shadow: 1px 1px #8b14ca;
+}
+
+/* Paragraphs */
+#aboutmain p {
+  font-size: 1.1em;
+  margin: 0 auto 10px auto;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+/* Image gallery */
+#aboutmain .image-gallery {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+#aboutmain .image-gallery img {
+  width: 30%;
+  min-width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.image-gallery figure {
+  flex: 1 1 260px;
+  max-width: 280px;
+  text-align: center;
+}
+
+.image-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.5);
+  cursor: pointer;
+}
+
+.image-gallery figcaption {
+  margin-top: 10px;
+  font-size: 0.95em;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Video */
+#aboutmain video {
+  display: block;
+  margin: 30px auto 30px auto;
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.map-wrapper {
+  background: rgba(178, 138, 191, 0.15);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#aboutmain iframe {
+  width: 100%;
+  max-width: 850px;
+  height: 400px;
+  border: none;
+  border-radius: 12px;
+}
+
+#interactive-map h3 {
+  text-align: center;
+  font-size: 1.4em;
+  color: #512964;
+  margin-bottom: 10px;
+}
+
+/* CTA button */
+#aboutmain .cta-button {
+  margin-top: 25px;
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border-radius: 6px;
+  background-color: #2c3e50;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 40px;
+}
+
+#aboutmain .cta-button:hover {
+  background-color: #34495e;
+  transform: scale(1.05);
+}
+
+#aboutmain section#our-heritage,
+#aboutmain section#adventure-awaits,
+#aboutmain section#interactive-map,
+#aboutmain section#cta {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#aboutmain h2 {
+  margin: 20px 0 10px 0 !important;
+}
+
+#aboutmain p {
+  margin: 0 auto 10px auto !important;
+}
+
+#aboutmain .image-gallery {
+  margin-top: 10px !important;
+  margin-bottom: 5px !important;
+  padding: 0 !important;
+}
+
+#aboutmain #adventure-awaits {
+  margin-top: 10px !important;
+}
+
+#aboutmain #interactive-map,
+#aboutmain #cta {
+  margin-top: 20px !important;
+}
+#adventure-awaits {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#adventure-awaits video {
+  margin: 20px 0;
+}
+
+.video-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px auto;
+  max-width: 90%;
+}
+
+.video-feature video {
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(129, 85, 174, 0.25);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.video-feature video:hover {
+  box-shadow: 0 4px 16px rgba(129, 85, 174, 0.4);
+}
+
+.video-feature figcaption {
+  margin-top: 4px;
+  margin-bottom: 0;
+  font-size: 1em;
+  line-height: 1.4;
+  color: #05422a;
+  font-style: italic;
+  text-align: center;
 }
